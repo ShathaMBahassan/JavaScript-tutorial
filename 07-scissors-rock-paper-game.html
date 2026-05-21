@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>scissors , Rock and Paper</title>
+</head>
+
+<body>
+    
+    <h2>scissors , Rock and Paper</h2>
+    <br/>
+    <button onclick="
+
+    let result = '';
+
+    game(result);
+
+    
+
+    if (computerMove='rock'){
+        result = 'Tie';
+    } else if (computerMove='paper'){
+        result = 'win';
+    } else {
+        result = 'lose';
+    }
+
+    alert(`computer choose ${computerMove} and you ${result}`);
+
+    ">Rock</button>
+
+    <button onclick="
+
+    result = '';  
+    game();
+      
+    if (computerMove='rock'){
+        result = 'win';
+    } else if (computerMove='paper'){
+        result = 'Tie';
+    } else {
+        result = 'lose';
+    }
+    
+    alert(`computer choose ${computerMove} and you ${result}`);
+
+    ">Paper</button>
+
+    <button onclick="
+
+    result = ''; 
+    game();
+       
+    if (computerMove='rock'){
+        result = 'lose';
+    } else if (computerMove='paper'){
+        result = 'win';
+    } else {
+        result = 'tie';
+    }
+
+    alert(`computer choose ${computerMove} and you ${result}`);
+
+    ">Scissors</button>
+
+
+    <script>
+
+        let computerMove='';
+
+
+        function game(){    
+            const randomNumber=Math.random();
+
+            if(randomNumber >=0 && randomNumber <1/3){
+                
+                computerMove = 'rock';
+
+            } else if (randomNumber >=1/3 && randomNumber <2/3){
+                
+                computerMove  ='paper';
+            } else {
+                
+                computerMove='scissors';
+            }        
+        }
+
+        game();
+
+
+    
+
+
+
+    </script>
+</body>
+
+</html>
