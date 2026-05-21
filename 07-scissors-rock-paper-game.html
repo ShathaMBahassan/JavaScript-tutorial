@@ -13,16 +13,14 @@
 
     let result = '';
 
-    game(result);
+    const computerMove = game();  
 
-    
-
-    if (computerMove='rock'){
+    if (computerMove==='rock'){
         result = 'Tie';
-    } else if (computerMove='paper'){
-        result = 'win';
-    } else {
+    } else if (computerMove==='paper'){
         result = 'lose';
+    } else {
+        result = 'win';
     }
 
     alert(`computer choose ${computerMove} and you ${result}`);
@@ -66,10 +64,11 @@
 
     <script>
 
-        let computerMove='';
+        
 
 
         function game(){    
+            let computerMove='';
             const randomNumber=Math.random();
 
             if(randomNumber >=0 && randomNumber <1/3){
@@ -82,7 +81,9 @@
             } else {
                 
                 computerMove='scissors';
-            }        
+            }    
+            
+            return computerMove;
         }
 
         game();
