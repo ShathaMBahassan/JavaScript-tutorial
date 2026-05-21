@@ -11,30 +11,50 @@
     <br/>
     <button onclick="
 
-        let result = '';
-
         const computerMove = game();
 
-        let resultGame = compare(computerMove, 'rock');
+        let resultGame = compare(computerMove, 'rock',score);
 
-        alert(`computer choose ${computerMove} and you ${resultGame}`);
+        alert(`computer choose ${computerMove} and you ${resultGame} \n 
+        Tie: ${score.tie} , Win: ${score.win} , Lose: ${score.lose}`);
 
     ">Rock</button>
 
     <button onclick="
-        resultGame = compare(computerMove, 'paper');
 
-        alert(`computer choose ${computerMove} and you ${resultGame}`);
+        resultGame = compare(computerMove, 'paper',score);
+
+        alert(`computer choose ${computerMove} and you ${resultGame} \n 
+        Tie: ${score.tie} , Win: ${score.win} , Lose: ${score.lose}`);
+
+
     ">Paper</button>
 
     <button onclick="
-        resultGame = compare(computerMove, 'scissors');
+        resultGame = compare(computerMove, 'scissors',score);
 
-        alert(`computer choose ${computerMove} and you ${resultGame}`);
+        alert(`computer choose ${computerMove} and you ${resultGame} \n 
+        Tie: ${score.tie} , Win: ${score.win} , Lose: ${score.lose}`);
+
     ">Scissors</button>
+
+    <button onclick="
+        score.lose=0;
+        score.win=0;
+        score.tie=0;
+        
+        alert(`Tie: ${score.tie} , Win: ${score.win} , Lose: ${score.lose}`);
+    ">Reset Score</button>
 
 
     <script>
+
+        let result = '';
+        const score = {
+            win: 0,
+            lose: 0,
+            tie:0
+        }
 
         function game(){    
             const randomNumber=Math.random();
@@ -56,22 +76,29 @@
 
         game();
         
-        function compare(computerMove, user){
+        function compare(computerMove, user , score){
             let result = '';
             if( computerMove === user){
                 result = 'Tie';
+                score.tie ++;
             } else if (computerMove === 'rock' && user === 'paper' ) {
                 result = 'win';
+                score.win ++;
             } else if (computerMove === 'rock' && user === 'scissors'){
                 result = 'lose';
+                score.lose ++;
             } else if (computerMove === 'scissors' && user === 'paper'){
                 result = 'lose';
+                score.lose ++;
             }else if (computerMove === 'scissors' && user === 'rock'){
                 result = 'win';
+                score.win ++;
             }else if (computerMove === 'paper' && user === 'rock'){
                 result = 'lose';
+                score.lose ++;
             }else if (computerMove === 'paper' && user === 'scissors'){
                 result = 'win';
+                score.win ++;
             }
 
             
