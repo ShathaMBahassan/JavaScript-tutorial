@@ -9,51 +9,34 @@
     
     <h2>scissors , Rock and Paper</h2>
     <br/>
-    <button onclick="
+    <button onclick=" let resultGame = compare(computerMove, 'rock',score);">Rock</button>
 
-        const computerMove = game();
+    <button onclick=" resultGame = compare(computerMove, 'paper',score);">Paper</button>
 
-        let resultGame = compare(computerMove, 'rock',score);
-
-        alert(`computer choose ${computerMove} and you ${resultGame} \n 
-        Tie: ${score.tie} , Win: ${score.win} , Lose: ${score.lose}`);
-
-    ">Rock</button>
-
-    <button onclick="
-
-        resultGame = compare(computerMove, 'paper',score);
-
-        alert(`computer choose ${computerMove} and you ${resultGame} \n 
-        Tie: ${score.tie} , Win: ${score.win} , Lose: ${score.lose}`);
-
-
-    ">Paper</button>
-
-    <button onclick="
-        resultGame = compare(computerMove, 'scissors',score);
-
-        alert(`computer choose ${computerMove} and you ${resultGame} \n 
-        Tie: ${score.tie} , Win: ${score.win} , Lose: ${score.lose}`);
-
-    ">Scissors</button>
+    <button onclick="resultGame = compare(computerMove, 'scissors',score);">Scissors</button>
 
     <button onclick="
         score.lose=0;
         score.win=0;
         score.tie=0;
         
+        localStorage.removeItem(score);
+        
         alert(`Tie: ${score.tie} , Win: ${score.win} , Lose: ${score.lose}`);
     ">Reset Score</button>
 
 
     <script>
-
+        const computerMove = game();
         let result = '';
-        const score = {
-            win: 0,
-            lose: 0,
-            tie:0
+        let score =  JSON.pares(localStorage.getItem('score'));
+
+        if(score === null){
+            score = {
+                win : 0,
+                lose: 0,
+                tie:0
+            };
         }
 
         function game(){    
@@ -99,12 +82,15 @@
             }else if (computerMove === 'paper' && user === 'scissors'){
                 result = 'win';
                 score.win ++;
-            }
-
-            
+            }     
         return result;
-
         }
+
+        localStorage.setItem('score',JSON.stringify(score))
+
+        alert(`computer choose ${computerMove} and you ${resultGame}\n 
+        Tie: ${score.tie} , Win: ${score.win} , Lose: ${score.lose}`);
+
 
     </script>
 </body>

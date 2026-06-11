@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM  Projects</title>
+</head>
+
+<body>
+    <button class="js-btn-9a">9a</button>
+    <button class="js-btn-9b" onclick="clickDone()">9b</button>
+    
+    <button class="js-btn-heads" onclick="clickHeads()">heads</button>
+    <button class="js-btn-tails" onclick="clickTails()">tails</button>
+    <p class="result"></p>
+
+    <input class="inp-name" placeholder="Enter your name" onkeydown="keyEnter()">
+    <button class="btn-submit" onclick="clickSubmit()">Submit</button>
+    <p class="txt-name"></p>
+
+    <input class="inp-typing" onkeyup="typing()">
+    <p class="txt-typing"></p>
+    
+
+
+    <script>
+        const btn =document.querySelector('.js-btn-9a');
+        console.log(btn)
+
+        function clickDone(){
+            document.querySelector(".js-btn-9b").innerHTML = '9b done!';
+        }
+
+        function clickHeads(){
+            document.querySelector(".result").innerHTML = 'You chose Heads';
+        }
+
+        function clickTails(){
+            document.querySelector(".result").innerHTML = 'You chose Tails';
+        }
+
+        function clickSubmit(){
+          const input_name = document.querySelector(".inp-name");
+          document.querySelector(".txt-name").innerHTML = `Your name is ${input_name.value}`;
+        }
+
+        function keyEnter(){
+            if(event.key === 'Enter'){
+                clickSubmit();
+            }
+        }
+
+        function typing(){
+            document.querySelector('.txt-typing').innerHTML = document.querySelector(".inp-typing").value;
+        }
+
+        
+
+
+
+    </script>
+</body>
+
+</html>

@@ -9,21 +9,25 @@
     
 
     <script>
-        const product = {
-            name : 'socks',
-            price : '5'
-        };
+     const product = {
+        name: 'bag', 
+        quntity : '1', 
+        price : '1000', 
+        tax(){
+            console.log('the tax');
+        }
 
-        console.log(product);
+     };
 
-        product.name = 'cotton socks';
+     const product1 = product;
+
+     product1.name='shoes';
+
+     console.log('the name of the product is ' + product.name);
+     console.log('the tax of the product is ' + product.tax());
+     console.log('the quantity of the product is ' + product.quntity); 
 
 
-        console.log(product);
-
-        product.quantity = '1';
-        
-        console.log(product);
     </script>
 </body>
 

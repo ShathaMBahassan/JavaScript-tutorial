@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM  Projects</title>
+</head>
+
+<body>
+    
+    <button class="js-qunt" onclick="showQunt()"> Show Quantitiy </button>
+
+    <button onclick="addOne()"> Add to cart</button>
+
+    <button onclick="addTwo()"> +2 </button>
+
+    <button onclick="addThree()"> +3 </button>
+
+    <button onclick="addFour()"> +4 </button>
+
+    <button onclick="addFive()"> +5 </button>
+
+    <button onclick="Remove()"> Remove from cart </button>
+
+    <button onclick="subtractTwo()"> -2 </button>
+
+    <button onclick="subtractThree()"> -3 </button>
+
+    <p class="result-qunt"></p>
+
+
+
+    <script>
+        let qunt = 0;
+
+        function showQunt(){
+            document.querySelector(".result-qunt").innerHTML = `cart quntity: ${qunt}`;
+        }
+
+        function addOne(){
+            qunt += 1;
+            document.querySelector(".result-qunt").innerHTML = `cart quntity: ${qunt}`;
+        }
+
+        function addTwo(){
+            qunt += 2;
+            document.querySelector(".result-qunt").innerHTML = `cart quntity: ${qunt}`;
+        }
+
+        function addThree(){
+            qunt += 3;
+            document.querySelector(".result-qunt").innerHTML = `cart quntity: ${qunt}`;
+        }
+
+        function addFour(){
+            qunt += 4;
+            document.querySelector(".result-qunt").innerHTML = `cart quntity: ${qunt}`;
+        }
+
+        function addFive(){
+            qunt += 5;
+            document.querySelector(".result-qunt").innerHTML = `cart quntity: ${qunt}`;
+        }
+
+        function Remove(){
+            qunt= 0;
+            document.querySelector(".result-qunt").innerHTML = `cart quntity: ${qunt}`;
+
+        }
+
+        function subtractTwo(){
+            qunt -=2;
+            document.querySelector(".result-qunt").innerHTML = `cart quntity: ${qunt}`;
+        }
+
+        function subtractThree(){
+            qunt -=3;
+            document.querySelector(".result-qunt").innerHTML = `cart quntity: ${qunt}`;
+        }
+    </script>
+</body>
+
+</html>
