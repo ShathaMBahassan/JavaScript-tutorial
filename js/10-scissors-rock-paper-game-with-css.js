@@ -1,63 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #213448;
-            color: white;
-        }
-
-        .tilte {
-            font-size: 30px;
-            font-weight: bold;
-        }
-
-        .move-icon {
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-        }
-
-        .move-btn {
-            background-color: transparent;
-            border: 1px solid #EAE0CF;  
-            padding-top: 15px;
-            padding-bottom: 15px;
-            padding-left: 15px;
-            padding-right: 15px;
-            border-radius: 60px;
-            margin-right: 10px; 
-            margin-bottom: 20px;
-        }
-
-        .result-font {
-            font-weight: bold;
-            font-size: 30px;
-        }
-    </style>
-    <title>scissors , Rock and Paper</title>
-</head>
-
-<body>
-    
-    <h2 class="tilte">scissors , Rock and Paper</h2>
-    <br/>
-    <button class="move-btn" onclick="scissorsRockPaper('rock')"><img src="images/rock.png" class="move-icon"></button>
-
-    <button class="move-btn" onclick="scissorsRockPaper('paper')"><img src="images/paper.png" class="move-icon"></button>
-
-    <button class="move-btn" onclick="scissorsRockPaper('scissors');"><img src="images/scissors.png" class="move-icon"></button>
-
-    <P class="js-result result-font"></P>
-    <p class="js-inp"></p>
-    
-
-
-    <script>
-
-        function game(){    
+function game(){    
             const randomNumber=Math.random();
 
             if(randomNumber >=0 && randomNumber <1/3){
@@ -124,8 +65,3 @@
         let resultGame = compare(computerMove, userChoice);
         
         }
-
-    </script>
-</body>
-
-</html>
