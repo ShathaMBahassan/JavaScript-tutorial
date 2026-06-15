@@ -3,15 +3,24 @@
 
 <head>
     <title>Todo List</title>
+    <style>
+
+        .add-btn {
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 
 
 <body>
 <p>Todo List</p>
 
-<input class="js-inp" placeholder="Enter To Do">
-<button class="js-add" onclick="toDo()">Add</button>
-<p class="js-to-do-list"></p>
+<input class="js-name-inp" placeholder="Enter To Do">
+<input class="js-date-inp" type="date">
+<button class="js-add add-btn" onclick="toDo()">Add</button>
+<div class="js-to-do-list to_do"></div>
 
 <script src="js/11-arrays-project.js"></script>
 

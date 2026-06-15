@@ -3,28 +3,46 @@ console.log('JS Loaded 01');
 
 const todo_list = [];
 
-function toDo(){
-    let todo_list_html= '';
-    
-    const inputElement = document.querySelector('.js-inp');
+function renderTodoList() {
+    let todo_list_html = '';
 
-    todo_list.push(inputElement.value);
+    for (let i = 0; i < todo_list.length; i++) {
+        const name = todo_list[i].name;
+        const dueDate =todo_list[i].dueDate;
 
-    inputElement.value = '';  
-    
-    for (let i=0;i<todo_list.length;i++){
-        const todo = todo_list[i];
-
-        const html = `<p>${todo}</P>`;
-
-        todo_list_html +=html;
-        console.log(todo_list_html);
-
+        todo_list_html += `
+            <p>
+                ${name} ${dueDate}
+                <button onclick="
+                    todo_list.splice(${i}, 1);
+                    renderTodoList();
+                ">DELETE</button>
+            </p>
+        `;
     }
 
-    const list_div = document.querySelector('.js-to-do-list');
-    list_div.innerHTML = todo_list_html 
+    document.querySelector('.js-to-do-list').innerHTML = todo_list_html;
 }
+
+function toDo() {
+    const inputElement_name = document.querySelector('.js-name-inp')
+    const inputElement_date = document.querySelector('.js-date-inp')
+
+    todo_list.push({
+        name:inputElement_name.value,
+        dueDate: inputElement_date.value
+    });
+
+    inputElement_name.value = '';
+    inputElement_date.value = '';
+
+    renderTodoList();
+}
+
+
+
+
+
 
     
     
